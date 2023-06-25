@@ -4,6 +4,9 @@ const PORT = 6969;
 import router from './routes/routes.js';
 import cors from "cors";
 import DBConnection from './database/db.js';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 app.use(cors());
 
