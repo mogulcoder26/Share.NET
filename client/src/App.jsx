@@ -7,7 +7,7 @@ function App() {
 
   const fileInputRef = useRef(null);
 
-  const [file, setFile] = useState([]);
+  const [file, setFile] = useState('');
   const [link,setLink] = useState('');
   const onUploadClick = () => {
     fileInputRef.current.click();
@@ -23,6 +23,7 @@ function App() {
         data.append("file",file);
         const result = await API(data);
         console.log(result)
+        setLink(result.path)
       }
     }
 
@@ -51,7 +52,7 @@ function App() {
             setFile(e.target.files[0]);
           }}
         />
-      {/* <a href={link} >{link}</a> */}
+      <a href={link} >{link}</a>
       </center>
     </>
   )
