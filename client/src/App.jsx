@@ -21,6 +21,8 @@ function Button1(props) {
         Get File Link!
 
       </Button>
+      <br />
+      <br />
       <div style={{ minHeight: '150px' }}>
         <Collapse in={open} dimension="width">
           <div id="example-collapse-text">
