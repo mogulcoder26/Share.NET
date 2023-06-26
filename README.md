@@ -1,4 +1,25 @@
-## Getting Started
+![Banner](./gitutils/banner.PNG)
+ *Share.NET* , a Web application built using the MERN stack and Vite. 
+ 
+Share.NET allows users to upload multimedia files and provides them with a shareable URI to easily share those files with others. 
+
+# Generating Shareable URIs
+After a successful upload, Share.NET generates a unique shareable URI for each file. This URI can be copied and shared with others, allowing them to access the uploaded file directly. The shared files can be accessed by anyone who has the URI, even if they are not registered users of Share.NET.
+
+# Uploading Multimedia Files
+Share.NET provides a user-friendly interface for users to upload multimedia files. Users can select files from their local machine and initiate the upload process. Supported multimedia file types include images, videos, audio files, and documents.
+
+# Getting Started
+To get started with Share.NET, follow these steps:
+
+# For local environment 
+- Clone the Share.NET repository from GitHub.
+- Install the necessary dependencies by running ```npm install``` in the project directory.
+- Configure the environment variables required for the application, such as the database connection details and any necessary API keys.
+- Start the frontend ```(https://localhost:5174)``` using ```npm run dev```. This will launch both the frontend vite server.
+- Start the backend server ```(https://localhost:6969)``` using ```npm run dev```. This will launch both the frontend vite server.
+
+## Getting Started With Vite
 
 First, run the development server:
 
