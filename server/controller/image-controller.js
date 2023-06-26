@@ -9,7 +9,7 @@ async function imageController(req,res) {
 
     try{                                                                                                                       
         const file = await File.create(fileObj);
-        res.status(200).json({path:`http://localhost:6969/file/${file._id}` });
+        res.status(200).json({path:`https://share-net-api1.onrender.com/file/${file._id}` });
         console.log(req);
     }catch(e){
         console.log("Error : " + e.message);

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const API_URL = 'http://localhost:6969';
+const API_URL = 'https://share-net-api1.onrender.com';
 
 
 async function API(data) {
