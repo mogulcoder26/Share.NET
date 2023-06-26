@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@100&display=swap');
+
+#body{
+    margin-top: 5rem;
+    margin-bottom: 15rem;
+    /* width: 50%;   */
+    overflow: hidden;
+}
+#body>h1{
+    font-size: 9rem;
+    font-family: 'Ysabeau SC', sans-serif
+}
+
+#body>h6{
+    font-size: 2rem;
+    font-family: 'Ysabeau SC', sans-serif
+}
