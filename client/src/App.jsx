@@ -8,9 +8,20 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Collapse from 'react-bootstrap/Collapse';
 import Footer from './components/Footer';
+
+function Wait() {
+  return (
+    <div>
+      <div class="custom-loader"></div>
+      <br />
+      <br />
+    </div>
+  )
+}
+
+
 function Button1(props) {
   const [open, setOpen] = useState(false);
-
   return (
     <>
       <Button
@@ -27,7 +38,7 @@ function Button1(props) {
         <Collapse in={open} dimension="width">
           <div id="example-collapse-text">
             <Card body style={{ width: '400px' }}>
-             <a href={props.link}>{props.link}</a>
+              <a href={props.link}>{props.link}</a>
             </Card>
           </div>
         </Collapse>
@@ -38,11 +49,11 @@ function Button1(props) {
 
 
 function App() {
-
   const fileInputRef = useRef(null);
-
+  const [isLoading, setIsLoading] = useState(false);
   const [file, setFile] = useState('');
   const [link, setLink] = useState('');
+
   const onUploadClick = () => {
     fileInputRef.current.click();
   }
@@ -50,14 +61,15 @@ function App() {
   useEffect(() => {
 
     async function getImage() {
-
       if (file) {
+      setIsLoading(true)
         const data = new FormData();
         data.append("name", file.name);
         data.append("file", file);
         const result = await API(data);
         console.log(result)
         setLink(result.path)
+        setIsLoading(false)
       }
     }
 
@@ -71,10 +83,10 @@ function App() {
       <Header />
       <center>
         <Body />
-        
+        {isLoading ?<Wait/> :null}
         <Button onClick={() => {
           onUploadClick()
-        }} variant="dark">Select File</Button>
+        }} variant="dark" disabled={isLoading}>Select File</Button>
         <input
           ref={fileInputRef}
           type="file"
@@ -85,14 +97,15 @@ function App() {
             setFile(e.target.files[0]);
           }}
         />
-        {/* <a href={link} >{link}</a> */}
         <br />
         <br />
-        {link && 
+        {link &&
           <Button1 link={link}>Click</Button1>
         }
+
       </center>
-      <Footer/>
+
+      <Footer />
     </>
   )
 }
