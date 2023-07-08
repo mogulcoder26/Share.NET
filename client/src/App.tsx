@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import React from "react";
 import './App.css'
-import API from "./services/API/api.js"
-import Header from './components/Header.jsx';
+import API from "./services/API/api"
+import Header from './components/Header';
 import Body from './components/Body';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function Wait() {
   return (
     <div>
-      <div class="custom-loader"></div>
+      <div className="custom-loader"></div>
       <br />
       <br />
     </div>
